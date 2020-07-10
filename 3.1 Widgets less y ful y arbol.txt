@@ -1,0 +1,18 @@
+Es una clase que puede tener argumentos, posicionales y argumentos 
+con nombre Todo en flutter , son widgets, que son bloques o piezas que tienen 
+una funcionalidad en especifico.
+
+Existen 2 tipos de widgets, los statelessWidget y StatefulWidget , ambos son
+clases asbtractas,
+
+Sin estado statelessWidget
+Este no le importa el estado , osea que no puede cambiar las propiedades
+de la clase, para eso se declara con variables final, pero con cierto codigo
+se puede redibujar el widget
+
+Con estado  StatefulWidget
+Esto permite que el widget sepa su estado, para darle seguimiento a propiedades
+de la clase que puedan cambiar y pueda redibujarce asi mismo 
+
+Todos los widget parten de uno y se van desplegando como un arbol,
+desplazandoce de nodos 

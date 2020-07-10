@@ -1,0 +1,31 @@
+Las future en dart, son un objecto que se resuelve asincronamente  y retorna
+algo. como js 
+
+
+void main(){
+
+print('Se hizo la primera linea');
+  
+//Automaticamente se hara la future y se completara con el then()
+  httpGet('http://asdasdasd.com').then( (texto){
+    
+    print('Se completo la Promesa'+ texto);
+    
+  });
+  
+  print('Ultima linea wey');
+
+}
+
+/*
+Asi se crea una Future y se retorna 
+*/
+Future<String> httpGet(String url){
+  
+//Deleayed es un constructor con nombre de Future que recibe una duracion
+  return Future.delayed( new Duration( seconds: 4 ), (){
+   
+    return 'Hola mundo promesas';
+  });
+  
+}

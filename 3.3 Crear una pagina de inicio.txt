@@ -1,0 +1,58 @@
+Para esto se necesitara unas carpets src/pages, en el cual crearemos un 
+archivo .dart para la pagina, como : 'inicio_page.dart'
+
+En el cual creamos una clase que extiende de los widget del tipo statelessWidget
+
+//Para crear un wisget
+import 'package:flutter/material.dart';
+import 'package:flutter_ejemplo/src/pages/inicio_page.dart';
+
+
+//Esta widget se va a encargar de ejecutar la aplicacion
+class MyApp extends StatelessWidget {
+
+//Este metodo retorna la creacion de un widget
+@override
+Widget build( context ){
+
+
+//Dentro del constructor pueden entrar diferentes parametros
+//Retornamos el widget
+return MaterialApp(
+  
+  //Esa propiedad recibe el constructor de otro widget
+  home: Center(
+
+  //De esta forma cargamos el widget como una pagina
+    child: InicioPage(),
+    
+    )
+  
+  
+   
+  
+);
+}
+
+}
+
+Y la clase sera instanceada por la clase que tiene el metodo main principal
+
+
+//Este paquete utiliza estilos de android
+//el de cuppertino hace que en android se vea como ios
+import 'package:flutter/material.dart';
+
+
+
+//ASi se importan clases de otras carpetas 
+import 'src/app.dart';
+
+
+//Todo progarama en dart necesita el metodo main para iniciar
+void main(){
+
+//Requiere un este metodo que recibe la istancea de una clase
+// que extienda de widget
+
+runApp( new MyApp() ) ;

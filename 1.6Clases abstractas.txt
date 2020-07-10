@@ -1,0 +1,49 @@
+Una clase abstracta es para establecer un molde o clase que tendra definido sus 
+atributos, propiedades y metodos, hasta que una clase la implemente se 
+definen los metodos;
+
+
+void main(){
+  
+  Perro scan = new Perro();
+  
+  
+  scan.sonido();
+  
+  Gato ricky = new Gato();
+  
+  ricky.sonido();
+
+
+}
+
+/*  
+Una clase abstracta sirve para establecer moldes con proipiedades, atributos y metodos establecidos pero no defindos, hasta que una clase la implemente
+*/
+abstract class Animal{
+  
+  int nmPatas;
+  
+  void sonido ();
+  
+  
+  
+}
+
+/*
+Asi se implimenta una clase abtracta para poder definir sus atributos y metodos requeridos
+*/
+class Perro implements Animal{
+  
+  int nmPatas;
+  
+  void sonido () => print('Wooof');
+  
+}
+
+class Gato implements Animal{
+  int nmPatas;
+  
+  void sonido() => print('MIUA');
+  
+}

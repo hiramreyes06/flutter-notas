@@ -1,0 +1,33 @@
+void main(){
+  
+  /*
+    Los map son como una lista en la que cada una de sus propiedades o 
+    varibles seran identificadas por una llave de un tipo de dato especifico y su valor puede ser de otro tipo de dato en especifco.
+  */
+ 
+  
+  Map<int, String> lol ={
+    1:'Hiramsin',
+    2:'Tacos de azada',
+    3:'Tengo hambre'
+  };
+  
+  
+  lol.addAll({ 4 : 'Agregado despues'});
+  
+ print('Seleccionado como tipo diccionario '+ lol[4] );
+  
+  Map<String, String> wow ={
+    'nombre':'Hiramson',
+    'edad':'20',
+    'estado':'Solterosky :('
+  };
+  
+  
+  
+  print(wow['nombre'] );
+  
+  
+  
+  
+}

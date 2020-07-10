@@ -1,0 +1,6 @@
+Primero necesitamos ejecutar la paleta de comandos con ctr+shift+p
+Y escribimos 
+select device "de flutter"
+
+Despues nos mostrara los dispositivos fisicos y virtuales y solo lo seleccionamos
+y presionamos f5 para correr la aplicacion...

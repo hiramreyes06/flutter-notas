@@ -1,0 +1,53 @@
+Para declarar una propiedad de una clase como privada solo se agrega un _
+y despues se requerira acceder a ella con setters y getters
+
+void main(){
+  
+  Cuadrado cua= new Cuadrado();
+  
+  cua.lado =5 ;
+  
+  
+  print('El area es: ${cua.area}' );
+  
+}
+
+
+
+class Cuadrado{
+  
+  //De esta forma  modificamos el acceso a variables privadas de la clase
+  double _lado;
+ 
+  
+  Cuadrado({double lado}){
+   
+   _lado = lado;
+   
+  }
+  
+  
+  
+  /*
+  De esta forma los setters y getters quedan diferentes a las funciones al
+  momento ejecutarlas, no se requerira () se vera como una variable
+  */
+  set lado(double valor){
+    
+    if(valor <= 0){
+    throw('No se pueden numeros negativos'); 
+      
+    }
+    _lado = valor;
+    
+  }
+  
+  //Get resumido y diferente a una funcion
+  double get area => _lado * _lado;
+  
+  
+  
+  toString() => 'Lado :  $_lado';
+  
+
+}

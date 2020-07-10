@@ -1,0 +1,51 @@
+Primero descargar e instalar el sdk de flutter de la pagina oficial y instalarlo
+en el android studio tambien,
+
+Despues agregar el path de flutter en las varabiles del sistema , path: donde se 
+extrajo el sdk en la carpeta bin 
+
+Despues en powershell ejecutar para poder ver los requerimentos de la 
+instalacion
+
+flutter doctor
+
+Necesitamos aceptar las licencias
+
+flutter doctor --android-licenses
+
+Ahora instalamos el plugin de flutter en android studios, lo buscamos ,
+
+Para crear un proyecto de flutter
+
+En el powershell o cmd dentro de una carpeta ejecutar
+
+flutter create nombreapp.
+
+
+
+*****Para instalarle un paquete al proyecto en el archivo pubspec.yaml
+
+En la parte de dependencias agregamos el nombre del paquete
+
+http: any
+
+Y asi lo importamos 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

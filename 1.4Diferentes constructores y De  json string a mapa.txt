@@ -1,0 +1,54 @@
+Para convertir un string con contenido json, necesitamos importar la libreria
+
+import 'dart:convert';
+
+//Libreria para convertir un json a mapa dinamico
+import 'dart:convert';
+
+
+
+void main(){
+  
+  //Js Object notacion 
+  final yeison = '{"nombre" : "Hiram", "poder": "Programar"}';
+  
+  
+  //Este metodo recibe el string y lo convierte a un mapa dinamico
+  final parsedJson = json.decode( yeison );
+  
+  //La clase tiene un constructor en especifico
+  Heroe heroe = new Heroe.fromJson( parsedJson );
+  
+  //Asi accedemos a los valores del mapa 
+  print('Nombre: '+heroe.nombre + ' Poder: '+ heroe.poder);
+  
+ 
+  
+}
+
+
+
+class Heroe{
+  
+ 
+  
+  String nombre;
+  String poder;
+  
+  //El constructor tradicional resumido para inicializar variables
+  Heroe(this.nombre, this.poder);
+  
+  //Asi creamos un constructor personalizado
+  Heroe.fromJson( parsedJson ){
+  
+    //Asi asignamos las propiedades del mapa dinamico
+  nombre= parsedJson['nombre'];
+  poder = parsedJson['poder'];  
+    
+    
+  }
+  
+  
+  
+  
+}

@@ -1,0 +1,56 @@
+Para crear una funcion o clase que requiera de parametros con un nombre
+en especifico , para que no importe el orden en el que se ponen los argumentos
+
+void main(){
+
+  
+  print(sumar(5,1));
+  
+//asi Se agregan los argumentos sin orden
+  print(saludar( nombre2:'Segundo' ,nombre1: ' Primero'  ));
+  
+  
+}
+
+//Asi se le asigna un nombre en especifico a un parametro
+String saludar( {String nombre1, String nombre2} ){
+  
+  return nombre1+' y '+ nombre2;
+}
+
+
+Y en una clase 
+
+void main(){
+
+  Heroe lol = new Heroe(st1: 'asd', st2: 'asdasd');
+  
+  print( lol );
+
+
+
+  
+}
+
+class Heroe{
+  
+  
+  String st1;
+  String st2;
+  
+  
+  
+  Heroe({String st1, String st2}){
+    this.st1 = st1;
+    this.st2= st2;
+      
+    print('Se ejecuto Con letras');
+    
+  }
+  
+  
+  String toString(){
+    return '${this.st1} - ${this.st2}';
+  }
+  
+}

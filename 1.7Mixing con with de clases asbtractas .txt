@@ -1,0 +1,54 @@
+El conjunto de clases Abstractas nos sirven para definir una clase base de otras
+clases, todo con el fin de ir personalizando mas clases que extiendan de la
+abstracta.
+
+Si le agregamos un metodo con algun procedimiento a una clase abstracta
+las clases que hereden de ella , ya tendran la funcion. Pero si solo se define
+funcion tendra que ser implementada en la clase que la este extendiendo;
+
+
+void main(){
+  
+Gato michi= new Gato();
+  
+  michi.caminar();
+  
+  Pato pato = new Pato();
+  
+  pato.volar();
+
+
+}
+
+
+abstract class Animal{}
+
+
+abstract class Mamimero extends Animal{}
+abstract class Ave extends Animal{}
+abstract class Pez extends Animal{}
+
+abstract class Volador{
+  
+  void volar()=> print('Esta volando');
+}
+abstract class Caminante{
+  void caminar() => print('Esta caminando');
+}
+abstract class Nadador{
+  void nadar() => print('Esta nadando');
+}
+
+class Delfin extends Mamimero with Nadador{}
+
+class Muercielago extends Mamimero with Volador{}
+
+class Gato extends Mamimero with Caminante{}
+
+class Paloma extends Ave with Caminante, Volador{}
+
+class Pato extends Ave with Caminante, Volador, Nadador{}
+
+class Tiburo extends Mamimero with Nadador{}
+
+class PezVolador extends Pez with Nadador, Volador{}

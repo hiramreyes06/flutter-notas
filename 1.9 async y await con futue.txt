@@ -1,0 +1,29 @@
+
+El async y el await , son palabras reservadas que el async sirve para declarar
+que una funcion es asincrona y que por cada await la funcion no podra seguir
+ejecutandoce hasta que se resuelva la Future
+
+void main ()async{
+
+print('Se hizo la primera linea');
+  
+ final mensaje = await httpGet('asdasasd');
+  
+  print('Se espero a: '+ mensaje);
+  
+  print('Ultima linea wey');
+
+}
+
+
+
+
+
+Future<String> httpGet(String url){
+  
+  return Future.delayed( new Duration( seconds: 4 ), (){
+   
+    return 'Hola mundo promesas';
+  });
+  
+}

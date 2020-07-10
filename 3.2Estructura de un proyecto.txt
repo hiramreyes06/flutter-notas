@@ -1,0 +1,9 @@
+Para crear una aplicacion de flutter es necesario tener un metodo main para que
+dart inicie, el cual necesita el metodo runApp para cargar el primer widget
+
+Se pueden crear estructuras de carpetas que contendra la aplicacion, para 
+widgets o paginas, etc
+Una estructura es crear una carpeta src la cual tendra el main
+
+Y para usarlas solo se haria el import del archivo donde se necesite crear la 
+instancea de la clase

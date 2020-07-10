@@ -1,0 +1,5 @@
+Primero debemos tener instalado las extensiones recomendadas para vsc,
+como awesom flutter snippet, flutter y dart.
+
+Despues de instalarlo presionamos las teclas ctr + shif + p y nos mostrara
+las opciones y le damos a create flutter app
