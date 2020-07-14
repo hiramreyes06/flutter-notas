@@ -1,23 +1,50 @@
 
-//Este paquete utiliza estilos de android
-//el de cuppertino hace que en android se vea como ios
+
 import 'package:flutter/material.dart';
+import 'package:flutter_ejemplo/src/paginas/alert_page.dart';
+import 'package:flutter_ejemplo/src/paginas/inicio_page.dart';
+import 'package:flutter_ejemplo/src/paginas/notFound_page.dart';
+
+import 'package:flutter_ejemplo/src/routes/routes.dart';
 
 
 
-//ASi se importan clases de otras carpetas 
-import 'src/app.dart';
 
+void main() => runApp( ComponentesApp() );
+ 
+class ComponentesApp extends StatelessWidget {
 
-//Todo progarama en dart necesita el metodo main para iniciar
-void main(){
+  @override
+  Widget build(BuildContext context) {
+    
+    return MaterialApp(
+      
+      //Esta propiedad sirve para quitar la etiqueta de app beta
+      debugShowCheckedModeBanner: false,
+      title: 'Nmss que pedo',
 
-//Requiere un este metodo que recibe la istancea de una clase
-// que extienda de widget
+      initialRoute: '/',
+  
+  //De esta forma cargamos las rutas definidas en el mapa
+    routes: getAppliationRoutes(),
 
-runApp( new MyApp() ) ;
+  //Esta propiedad sirve para capturar rutas que no estan definidas
+    onGenerateRoute: (RouteSettings settings){
 
+      print(settings.arguments);
+      //Asi cargamos una pagina por defecto si no se encuentra una ruta
+      return MaterialPageRoute(
+        builder: ( BuildContext context) => NotFoundPage()
+      );
 
+    }
 
+      //Asi se define por constructor la primera pagina a cargar
+      // home: InicioPage(),
+     
+    );
+  }
 }
+
+
 

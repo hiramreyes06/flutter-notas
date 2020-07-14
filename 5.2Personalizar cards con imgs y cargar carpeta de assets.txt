@@ -1,0 +1,83 @@
+La estructura de un card basico , con algunos botones es:
+
+Widget _cardBasica(){
+          
+          return Card(
+          child: Column(
+          children: <Widget>[
+          ListTile(
+           leading: Icon(
+             Icons.photo_album,
+             color: Colors.blue,
+           ), 
+          title: Text('Este es el titulo de la tarjeta'),
+          subtitle: Text('Este es el subtitulo de la tarjeta'),
+          ),
+          Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          
+          children: <Widget>[
+            FlatButton(
+              child: Text('Cancelar'),
+              onPressed: (){
+          
+              },
+            ),
+            FlatButton(
+               child: Text('OK'),
+               onPressed: (){
+          
+               },
+               
+               )
+               
+          ],
+          )
+          
+          
+          
+          ],
+          
+            ),
+          );
+
+Para crear un card personalizado que cargue una imagen de internet
+pero muestre otra imagen o gif hasta que sea cargada:
+
+Tenemos que agregar primero la imagen o gif dentro de una carpeta del
+proyecto y declarar el recurso en el archivo pubspec.yaml
+En el cual para cargar todo el contenido de una carpeta como assetes:
+
+assets:
+  - data/menu_opts.json
+  - assets/
+
+Y ahora creamos la funcion que retorna el card
+
+Widget _cardTipo2() {
+
+
+              return Card(
+                child: Column(
+                  children: <Widget>[
+
+                    //Este es un widget especial para cargar imagenes
+                    FadeInImage(
+                      image: NetworkImage('https://fondosmil.com/fondo/2257.jpg') ,
+                     
+                     //Aqui se agrega una imagen momentaria mientras se carga la img
+                      placeholder: AssetImage('assets/jar-loading.gif'),
+
+                      //Al cargar la imagen le agrega mas tiempo
+                      fadeInDuration: Duration( milliseconds: 200 ),
+                    )
+
+                    //Esta es una forma de cargar imgs asincronamente
+                    // Image( 
+                    //   image: NetworkImage('https://fondosmil.com/fondo/2257.jpg'),
+                    // )
+                  ],
+                ),
+              );
+            }
+ 

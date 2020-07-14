@@ -1,0 +1,50 @@
+Esta funcion nos va a servir para que mediante el nombre del icono
+en un string nos retorne el icono.
+Primero creamos una carpeta y un archivo utils/icono_string_utl.dart
+
+y agregamos
+
+import 'package:flutter/material.dart';
+
+final _icons= <String, IconData>{
+'add_alert': Icons.add_alert,
+'accessibility' : Icons.accessibility,
+'folder_open': Icons.folder_open
+};
+
+Icon  getIcon(String nombreIcono){
+  
+return Icon( _icons[ nombreIcono ], color: Colors.blue );  
+}
+
+Y le agregamos la funcion a cualquier otra que necesite de un icono
+como
+
+ //Esta funcion recibe la data resuelta del future
+        List<Widget> _listaItems( List<dynamic> data) {
+
+          final List<Widget> opciones =[];
+
+          data.forEach( (opt){
+            final widgetTemp =  ListTile(
+
+              title: Text( opt['texto'] ),
+//Esta funcion implementada globalmente
+              leading: getIcon( opt['icon'] ),
+              
+              trailing: Icon(
+                Icons.keyboard_arrow_right,
+                 color: Colors.black),
+              onTap: (){
+                print('Se presiono '+opt['texto']);
+              },   
+            );
+
+            opciones..add( widgetTemp )
+            ..add( Divider() );
+          });
+
+        //Asi retornamos la lista construida de widgets
+          return opciones;
+
+         }

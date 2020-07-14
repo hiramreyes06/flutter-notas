@@ -1,7 +1,9 @@
 //Para crear un wisget
 import 'package:flutter/material.dart';
-import 'package:flutter_ejemplo/src/pages/contador_page.dart';
-import 'package:flutter_ejemplo/src/pages/inicio_page.dart';
+import 'package:flutter_ejemplo/src/contadorEjemplo/pages/contador_statefulwidget.dart';
+
+
+
 
 
 //Esta widget se va a encargar de ejecutar la aplicacion
@@ -22,7 +24,7 @@ return MaterialApp(
   //De esta forma cargamos el widget como una pagina
     child: ContadorPage(),
     
-    )
+  )
   
   
    

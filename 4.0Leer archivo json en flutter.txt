@@ -1,0 +1,43 @@
+Para leer un json que esta en un archivo dentro del proyecto, lo tenemos que 
+agregar al archivo pubspec.yaml, en el cual se agrega la direccion con un -
+en la parte de :
+
+ # To add assets to your application, add an assets section, like this:
+   assets:
+    - data/menu_opts.json
+
+Ahora creamos una carpeta para una clase que se va a encargar de leer el 
+archivo con json, como providers/menu_provider.dart
+
+
+/*
+Para exponer un paquete o un solo objeto de algun paquete, agregamos
+la palabra reservada show para especificar que objeto.
+ */
+import 'package:flutter/services.dart'  show rootBundle;
+
+//Asi se crea una clase privada para que se cree una instancia publica 
+//la clase
+class _MenuProvider{
+
+List<dynamic> opciones = [];
+
+_MenuProvider(){
+  cargarData();
+}
+
+  void cargarData() {
+
+rootBundle.loadString('data/menu_opts.json')
+.then( (data) {
+
+print(data);
+
+});
+
+  }
+
+}
+
+//Este archivo .dart solo va a poder compartir la instancia de la clase
+final menuProvider = new _MenuProvider();

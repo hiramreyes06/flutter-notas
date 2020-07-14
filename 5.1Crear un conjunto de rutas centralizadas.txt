@@ -1,0 +1,57 @@
+Para eso creamos una carpeta y un archivo que servira para guardar
+la definicion de todas nuestras rutas, como routes/routes.dart
+en el cual importaremos y agregaremos
+
+import 'package:flutter/material.dart';
+
+import 'package:flutter_ejemplo/src/contadorEjemplo/pages/contador_statelesswidget.dart';
+import 'package:flutter_ejemplo/src/paginas/alert_page.dart';
+import 'package:flutter_ejemplo/src/paginas/avatar_page.dart';
+
+//Esto va retornar el mapa de rutas
+Map<String, WidgetBuilder> getAppliationRoutes(){
+
+return <String, WidgetBuilder>{
+      '/' : ( BuildContext context) => InicioPage(),
+      'alert': ( BuildContext context) => AlertPage(),
+      'avatar': (BuildContext context) => AvatarPage()
+    };
+}
+
+Y ahora para establecer el mapa de rutas , lo tenemos que agregar a la
+propiedad routes del archivo main.dart
+
+void main() => runApp( ComponentesApp() );
+ 
+class ComponentesApp extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    
+    return MaterialApp(
+      
+      //Esta propiedad sirve para quitar la etiqueta de app beta
+      debugShowCheckedModeBanner: false,
+      title: 'Nmss que pedo',
+
+      initialRoute: '/',
+  
+  //De esta forma cargamos las rutas definidas en el mapa
+    routes: getAppliationRoutes(),
+
+  //Esta propiedad sirve para capturar rutas que no estan definidas
+    onGenerateRoute: (RouteSettings settings){
+
+      //Asi cargamos una pagina por defecto si no se encuentra una ruta
+      return MaterialPageRoute(
+        builder: ( BuildContext context) => InicioPage()
+      );
+
+    }
+
+      //Asi se define por constructor la primera pagina a cargar
+      // home: InicioPage(),
+     
+    );
+  }
+}

@@ -1,0 +1,34 @@
+Para eso necesitamos tener 2 o mas widgets, del tipo que sean,
+Esta es una navegacion basica en la cual automatiamente tiene un
+back button para regresar. 
+
+En la ejecucion del metodo de algun boton o widget agregamos:
+
+  onTap: (){
+                print('Se presiono '+opt['texto']);
+
+                final route =MaterialPageRoute(
+
+                builder: (context) => AlertPage()
+                  
+                );
+                 
+                /*
+                Este es un objeto estatico para naveegar entre paginas
+                pero necesita el context para saber el historial de
+                paginas y navegacion tambien recibe un materialPageRoute
+                */
+                Navigator.push(context, route);
+              },  
+
+
+Y para crear manualmente un back button  en la pagina que se navega
+ejecutamos el metodo y le agregamos el parametro
+
+floatingActionButton: FloatingActionButton(
+        child: Text('Atras'),
+        onPressed: (){
+          Navigator.pop(context);
+        },
+      ),
+

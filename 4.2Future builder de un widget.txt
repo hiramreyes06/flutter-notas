@@ -1,0 +1,74 @@
+Futurebuilder nos sirve para poder ejecutar metodos asincronos con
+Future y que cuando se resuelvan construyan y pinten un widget que 
+necesite tener los datos resueltos del future.
+
+Para eso podemos crear una funcion que retornara el widget de forma
+asincrona para utilizarla en algun otro widget
+
+//Esta es una funcion anidada con otras funciones asincornas
+   Widget _getLista() {
+
+   // print( menuProvider.opciones ); 
+
+  /*
+  Este tipo de widget espera a que se resuelva un future para 
+  poder construir otro widget
+  */
+   return FutureBuilder(
+     //Esto recibie una funcion de tipo future para resolver
+     future: menuProvider.cargarData(),
+
+    //Este parametro emite la informacion de cuando se resulve el future
+     builder: ( context, AsyncSnapshot<List<dynamic>> snapshot){
+
+       print('Future builder resuelto');
+       print('Data obtenida ');
+       //Aqui se guarda la data que resuelve el future
+       print(snapshot.data);
+
+    //Esto es el futureBuilder  va a retornar cuando se cumpla el future
+       return ListView(
+         children: _listaItems( snapshot.data ),
+       );
+
+     },
+
+     //Este parametro sirve para establece una data inicial
+     initialData: [],
+   );
+
+  }
+
+
+Ahora creamos una funcion que reciba los datos resueltos del future y
+retorne una lista de widgets construidos
+
+//Esta funcion recibe la data resuelta del future
+        List<Widget> _listaItems( List<dynamic> data) {
+
+          final List<Widget> opciones =[];
+
+          data.forEach( (opt){
+            final widgetTemp =  ListTile(
+
+              title: Text( opt['texto'] ),
+              leading: Icon( 
+                Icons.account_circle,
+                 color: Colors.blue),
+              trailing: Icon(
+                Icons.keyboard_arrow_right,
+                 color: Colors.black),
+              onTap: (){
+                print('Se presiono '+opt['texto']);
+              },   
+            );
+
+            opciones..add( widgetTemp )
+            ..add( Divider() );
+          });
+
+        //Asi retornamos la lista construida de widgets
+          return opciones;
+
+         }
+
