@@ -25,6 +25,7 @@ void main(){
 
   Heroe lol = new Heroe(st1: 'asd', st2: 'asdasd');
   
+//Al imprimir la instancea, en automatico ejecuta el metodo toString()
   print( lol );
 
 
@@ -48,9 +49,38 @@ class Heroe{
     
   }
   
-  
+  //Esto sobrescribe el metodo, al momento de imprimir la instancea mostrara lo que tenga la funcion
   String toString(){
     return '${this.st1} - ${this.st2}';
   }
   
 }
+
+
+
+//Resumir la inicializacion de variables
+
+
+class Heroe{
+  
+  
+  String nombre;
+  String poder;
+  
+  
+  //De esta forma asignamos los valor del constructor, y seran parametros con nombre
+  Heroe({ this.nombre, this.poder }){
+  
+    
+  }
+  
+  //Esto sobrescribe el metodo, al momento de imprimir la instancea mostrara lo que tenga la funcion
+  String toString() => 'nombre: $nombre' - poder: $poder
+  
+}
+
+
+
+
+
+
